@@ -15,7 +15,7 @@ Here is an example of my first post in Human Connection:
 
 ```javascript
 const hc = require('human-connection-api-nodejs-client');
-// hc.connect('https://api-alpha.human-connection.org/'); // current alpha backend URL
+// hc.connect('https://api-alpha.human-connection.org'); // current alpha backend URL
 hc.connect('http://localhost:3030'); // for local development
 let user = new hc.User({
   email: 'test@test.de',
@@ -95,3 +95,6 @@ When you're done, run:
 ```sh
 yarn lint
 ```
+
+There is also an [API documentation for Human Connection](https://documenter.getpostman.com/view/309658/human-connection-api/RVu7Dnmh#b93affd0-ae02-435c-a923-b8ded7fd119c)
+that you might find useful.
