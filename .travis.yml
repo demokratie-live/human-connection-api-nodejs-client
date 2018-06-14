@@ -3,7 +3,7 @@ env:
   - NODE_PATH=$(which node)
 install:
   - yarn install
-  - cd human-connection-api
+  - cd API
   - yarn install
   - cd ..
 services:
@@ -11,7 +11,7 @@ services:
 node_js:
   - "9"
 before_script:
-  - cp local.travis.json human-connection-api/config/local.json
+  - cp local.travis.json API/config/local.json
 script:
   - yarn lint
   - yarn test
