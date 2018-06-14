@@ -11,6 +11,31 @@ framework, so going through the features should give a good idea how to use this
 library. E.g. if you want to learn how to create a contribution for an
 organization, check out this [feature](/features/usage/resolve_slugs.feature).
 
+Here is an example of my first post in Human Connection:
+
+```javascript
+const hc = require('human-connection-api-nodejs-client');
+// hc.connect('https://api-alpha.human-connection.org/'); // current alpha backend URL
+hc.connect('http://localhost:3030'); // for local development
+let user = new hc.User({
+  email: 'test@test.de',
+  password: '1234'
+});
+let contributionParams = {
+  title: 'Hier gibt\'s die erste 3rd party library für Human Connection',
+  content: 'Für alle die gerne automatisiert Beiträge auf Human Connection posten möchten, gibt es jetzt eine Software-Bibliothek namens <em>human-connection-api-nodejs-client</em>. Zurzeit kann man Beiträge erstellen oder updaten wenn es sie schon gibt. Der Quellcode ist natürlich öffentlich auf <a href="https://github.com/demokratie-live/human-connection-api-nodejs-client">Github</a> verfügbar.<br>Viel Spaß beim Posten!',
+  contentExcerpt: 'Für alle die gerne automatisiert Beiträge auf Human Connection posten möchten, gibt es jetzt eine Software-Bibliothek',
+  type: 'post',
+  language: 'de'
+};
+user.contribute(contributionParams, {
+  slug: 'erste-3rd-party-library-fuer-human-connection',
+  resolveSlugs: {
+    categories: ['justforfun', 'cooperation-development', 'education-sciences']
+  }
+});
+```
+
 
 ## Testing
 
