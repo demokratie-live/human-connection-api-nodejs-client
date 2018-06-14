@@ -7,7 +7,7 @@ let hcApi;
 // Asynchronous Callback
 BeforeAll((callback) => {
   hcApi = spawn(process.env.NODE_PATH || 'node', ['server/'], {
-    cwd: './human-connection-api/',
+    cwd: './API/',
     env: {
       NODE_ENV: 'test',
     },

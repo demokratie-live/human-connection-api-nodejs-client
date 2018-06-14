@@ -2,7 +2,7 @@
 const { Before, AfterAll, setWorldConstructor } = require('cucumber');
 
 process.env.NODE_ENV = 'test'; // write into the test database
-const backendApp = require('../../human-connection-api/server/app');
+const backendApp = require('../../API/server/app');
 
 function CustomWorld() {
   this.app = backendApp;

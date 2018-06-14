@@ -3,7 +3,7 @@
   "port": 3030,
   "baseURL": "http://localhost:3030",
   "frontURL": "http://localhost:3000",
-  "public": "../human-connection-api/public/",
+  "public": "../API/public/",
   "debug": true,
   "logLevel": "log",
   "paginate": {
