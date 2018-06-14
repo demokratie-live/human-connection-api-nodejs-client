@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "node-fetch": "^2.1.2"
+  },
+  "name": "human-connection-api-nodejs-client",
+  "version": "1.0.0",
+  "description": "Human Connection Node.js API Client",
+  "main": "index.js",
+  "repository": "https://github.com/roschaefer/human-connection-glue-code",
+  "author": "Robert Schaefer <git@roschaefer.de>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint features/ index.js",
+    "start": "node index.js",
+    "test": "cucumber-js"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "cucumber": "^4.2.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-you-dont-need-lodash-underscore": "^6.3.1",
+    "fs-extra": "^5.0.0",
+    "wait-on": "^2.1.0"
+  },
+  "files": [
+    "index.js"
+  ]
+}
