@@ -20,7 +20,7 @@ function handleFetchErrors(error, defaultMessage) {
 
 async function findBySlug(models, slug) {
   try {
-    let url = new URL(models, hcBackend);
+    const url = new URL(models, hcBackend);
     url.searchParams.append('slug', slug);
     const response = await fetch(url, {
       headers: { 'Content-Type': 'application/json' },
@@ -67,7 +67,7 @@ class User {
     };
 
     try {
-      let url = new URL('/authentication', hcBackend);
+      const url = new URL('/authentication', hcBackend);
       const response = await fetch(url, {
         method: 'post',
         body: JSON.stringify(formData),
