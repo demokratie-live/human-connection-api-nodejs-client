@@ -9,7 +9,7 @@ install:
 services:
   - mongodb
 node_js:
-  - "9"
+  - "10"
 before_script:
   - cp local.travis.json API/config/local.json
 script:
