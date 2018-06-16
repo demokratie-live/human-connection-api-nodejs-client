@@ -12,7 +12,7 @@ Feature: Using this library to create a contribution
     And in your script "script.js" the first lines look like this:
     """
     const hc = require('human-connection-api-nodejs-client');
-    hc.connect('http://localhost:3030');
+    hc.connect('http://localhost:3030/');
     let user = new hc.User({
       email: "user@example.com",
       password: "1234"
