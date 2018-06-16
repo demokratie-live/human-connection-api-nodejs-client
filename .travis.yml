@@ -1,6 +1,4 @@
 language: node_js
-env:
-  - NODE_PATH=$(which node)
 install:
   - yarn install
   - cd API
@@ -14,4 +12,4 @@ before_script:
   - cp local.travis.json API/config/local.json
 script:
   - yarn lint
-  - yarn test
+  - NODE_PATH=$(which node) yarn test
