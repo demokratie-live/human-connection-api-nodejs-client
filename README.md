@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/demokratie-live/human-connection-api-nodejs-client.svg?branch=master)](https://travis-ci.org/demokratie-live/human-connection-api-nodejs-client)
 
 ## Prerequisites
-Make sure you have a recent version of [NodeJS](https://nodejs.org/en/) and 
+Make sure you have a recent version of [NodeJS](https://nodejs.org/en/) (> v10) and
 [yarn](https://yarnpkg.com/lang/en/).
 
 ## Usage
@@ -84,7 +84,7 @@ NODE_PATH=$(which node) yarn test
 
 I would suggest that you create a [cucumber-js](https://github.com/cucumber/cucumber-js)
 feature before you implement your desired feature. For debugging I set
-breakpoints with `debugger` somewhere in the code, run 
+breakpoints with `debugger` somewhere in the code, run
 ```sh
 node --inspect node_modules/cucumber/bin/cucumber-js features/your.feature
 ```

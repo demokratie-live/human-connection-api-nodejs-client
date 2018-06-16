@@ -1,7 +1,7 @@
 /* eslint no-console: off */
 const fetch = require('node-fetch');
 
-let hcBackendUrl;
+let hcBackend;
 
 function toJson(response) {
   if (!response.ok) {
@@ -20,7 +20,9 @@ function handleFetchErrors(error, defaultMessage) {
 
 async function findBySlug(models, slug) {
   try {
-    const response = await fetch(`${hcBackendUrl}/${models}?slug=${slug}`, {
+    let url = new URL(models, hcBackend);
+    url.searchParams.append('slug', slug);
+    const response = await fetch(url, {
       headers: { 'Content-Type': 'application/json' },
     });
     const json = await toJson(response);
@@ -65,7 +67,8 @@ class User {
     };
 
     try {
-      const response = await fetch(`${hcBackendUrl}/authentication`, {
+      let url = new URL('/authentication', hcBackend);
+      const response = await fetch(url, {
         method: 'post',
         body: JSON.stringify(formData),
         headers: { 'Content-Type': 'application/json' },
@@ -88,14 +91,14 @@ class User {
     }
 
     let method = 'post';
-    let url = `${hcBackendUrl}/contributions`;
+    let url = new URL('/contributions', hcBackend);
 
     if (options && options.slug) {
       const existingContribution = await findBySlug('contributions', options.slug);
       if (existingContribution) {
         method = 'patch';
         // eslint-disable-next-line no-underscore-dangle
-        url = `${hcBackendUrl}/contributions/${existingContribution._id}`;
+        url = new URL(`/contributions/${existingContribution._id}`, hcBackend);
       } else {
         contributionParams.slug = options.slug; // that's OK! Just create it with this slug.
       }
@@ -122,7 +125,7 @@ class User {
 }
 
 function connect(url) {
-  hcBackendUrl = url;
+  hcBackend = new URL(url);
 }
 
 module.exports = {
