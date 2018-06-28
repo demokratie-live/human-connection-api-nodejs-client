@@ -3,7 +3,7 @@
     "node-fetch": "^2.1.2"
   },
   "name": "human-connection-api-nodejs-client",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Human Connection Node.js API Client",
   "main": "index.js",
   "repository": "https://github.com/roschaefer/human-connection-glue-code",
